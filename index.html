@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Novu Estates — Find Your Dream Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --blue:#1B4FD8;--blue-dark:#0F2F8A;--blue-light:#E8EFFF;
+  --brown:#7B4F2E;--brown-dark:#4A2D15;--brown-light:#F5EDE5;
+  --white:#F2F2F2;--off:#E8E8E8;--text:#1A1A1A;--muted:#6B6B6B;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5%;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);}
+.logo{font-weight:900;font-size:1.4rem;letter-spacing:-0.5px;color:var(--blue);}
+.logo span{color:var(--brown);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.85rem;font-weight:600;color:var(--text);letter-spacing:0.02em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--blue);}
+.nav-cta{background:var(--blue);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;font-size:0.85rem;font-weight:700;text-decoration:none;transition:transform 0.2s,background 0.2s;}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d1b4b 0%,#1B4FD8 50%,#7B4F2E 100%);}
+.hero-bg-circles{position:absolute;inset:0;pointer-events:none;}
+.circle{position:absolute;border-radius:50%;opacity:0.08;}
+.c1{width:600px;height:600px;background:#fff;top:-200px;right:-100px;}
+.c2{width:400px;height:400px;background:#fff;bottom:-150px;left:-100px;}
+.c3{width:200px;height:200px;background:var(--brown-light);top:30%;right:10%;}
+.hero-content{position:relative;text-align:center;padding:2rem 1rem;max-width:900px;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.5rem 1.2rem;border-radius:50px;margin-bottom:2rem;animation:fadeUp 0.6s ease both;}
+.hero h1{font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;line-height:1;letter-spacing:-2px;margin-bottom:1.5rem;animation:fadeUp 0.7s 0.1s ease both;}
+.hero h1 .accent{color:#F5C842;display:block;}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto 2.5rem;line-height:1.7;font-weight:400;animation:fadeUp 0.7s 0.2s ease both;}
+
+/* SEARCH BAR */
+.search-bar{background:#fff;border-radius:80px;display:flex;align-items:center;padding:0.5rem 0.5rem 0.5rem 1.5rem;gap:0.5rem;max-width:680px;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.25);animation:fadeUp 0.7s 0.3s ease both;}
+.search-bar input{flex:1;border:none;outline:none;font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--text);background:transparent;}
+.search-bar select{border:none;outline:none;font-family:'Poppins',sans-serif;font-size:0.85rem;color:var(--muted);background:transparent;cursor:pointer;}
+.search-bar button{background:var(--blue);color:#fff;border:none;padding:0.8rem 1.8rem;border-radius:60px;font-family:'Poppins',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;white-space:nowrap;transition:transform 0.2s,background 0.2s;}
+.search-bar button:hover{background:var(--blue-dark);transform:scale(1.03);}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.5);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;animation:bounce 2s infinite;}
+.scroll-line{width:1px;height:40px;background:rgba(255,255,255,0.3);}
+
+/* STATS */
+.stats{background:var(--brown);padding:2.5rem 5%;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.stat-num{font-size:2.5rem;font-weight:900;color:#fff;letter-spacing:-1px;}
+.stat-label{font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.1em;}
+
+/* SECTION TITLES */
+.section{padding:6rem 5%;}
+.section.alt{background:var(--off);}
+.section-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:0.8rem;}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1.5px;line-height:1.1;color:var(--text);}
+.section-title .brown{color:var(--brown);}
+.section-sub{font-size:1rem;color:var(--muted);margin-top:0.8rem;line-height:1.7;max-width:480px;}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;}
+.view-all{font-size:0.85rem;font-weight:700;color:var(--blue);text-decoration:none;border:2px solid var(--blue);padding:0.55rem 1.4rem;border-radius:50px;transition:all 0.2s;}
+.view-all:hover{background:var(--blue);color:#fff;}
+
+/* LISTINGS */
+.listings-grid{max-width:1100px;margin:0 auto;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.card{background:#fff;border-radius:20px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(27,79,216,0.12);}
+.card-img{width:100%;height:220px;object-fit:cover;display:block;position:relative;overflow:hidden;}
+.card-img-wrap{position:relative;}
+.card-img-inner{width:100%;height:220px;background:linear-gradient(135deg,#1B4FD8,#7B4F2E);display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.card-badge{position:absolute;top:12px;left:12px;background:var(--blue);color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:50px;}
+.card-fav{position:absolute;top:12px;right:12px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:transform 0.2s;}
+.card-fav:hover{transform:scale(1.15);}
+.card-body{padding:1.2rem;}
+.card-price{font-size:1.4rem;font-weight:900;color:var(--blue);letter-spacing:-0.5px;}
+.card-name{font-size:0.95rem;font-weight:700;margin:0.3rem 0 0.2rem;color:var(--text);}
+.card-loc{font-size:0.8rem;color:var(--muted);font-weight:500;}
+.card-meta{display:flex;gap:1rem;margin-top:1rem;padding-top:1rem;border-top:1px solid #f0f0f0;}
+.meta-item{font-size:0.78rem;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:0.3rem;}
+.meta-icon{font-size:1rem;}
+
+/* HOW IT WORKS */
+.hiw-inner{max-width:1100px;margin:0 auto;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;position:relative;}
+.steps::before{content:'';position:absolute;top:40px;left:calc(16.66% + 1rem);right:calc(16.66% + 1rem);height:2px;background:linear-gradient(90deg,var(--blue),var(--brown));z-index:0;}
+.step{text-align:center;position:relative;z-index:1;}
+.step-num{width:80px;height:80px;border-radius:50%;background:var(--blue);color:#fff;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;box-shadow:0 10px 30px rgba(27,79,216,0.3);}
+.step:nth-child(2) .step-num{background:var(--brown);}
+.step:nth-child(3) .step-num{background:var(--blue-dark);}
+.step h3{font-size:1.05rem;font-weight:800;margin-bottom:0.5rem;}
+.step p{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+
+/* TESTIMONIALS */
+.testimonials-inner{max-width:1100px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.testi-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(0,0,0,0.06);transition:transform 0.3s;}
+.testi-card:hover{transform:translateY(-4px);}
+.testi-card:first-child{background:var(--blue);color:#fff;}
+.stars{color:#F5C842;font-size:1rem;margin-bottom:1rem;letter-spacing:2px;}
+.testi-card:first-child .stars{color:#F5C842;}
+.testi-text{font-size:0.9rem;line-height:1.7;font-weight:500;margin-bottom:1.5rem;}
+.testi-card:first-child .testi-text{color:rgba(255,255,255,0.85);}
+.testi-author{display:flex;align-items:center;gap:0.8rem;}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;color:#fff;}
+.av1{background:var(--brown);}
+.av2{background:var(--blue);}
+.av3{background:#1B4FD8aa;}
+.testi-card:first-child .av1{background:rgba(255,255,255,0.25);}
+.author-name{font-size:0.85rem;font-weight:700;}
+.author-role{font-size:0.75rem;color:var(--muted);font-weight:500;}
+.testi-card:first-child .author-role{color:rgba(255,255,255,0.6);}
+
+/* CONTACT */
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.contact-left .big{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:1.5rem;}
+.contact-left p{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:2rem;}
+.contact-info{display:flex;flex-direction:column;gap:1rem;}
+.ci{display:flex;align-items:center;gap:0.8rem;font-size:0.88rem;font-weight:600;}
+.ci-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);}
+.contact-form{background:var(--white);border-radius:24px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.08);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;color:var(--text);margin-bottom:0.5rem;text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid #e8e8e8;border-radius:12px;padding:0.8rem 1rem;font-family:'Poppins',sans-serif;font-size:0.88rem;color:var(--text);outline:none;transition:border 0.2s;background:#fff;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.submit-btn{width:100%;background:var(--blue);color:#fff;border:none;padding:1rem;border-radius:50px;font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:800;cursor:pointer;letter-spacing:0.03em;transition:transform 0.2s,background 0.2s;}
+.submit-btn:hover{background:var(--blue-dark);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:#0d1b4b;color:#fff;padding:4rem 5% 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-brand{font-weight:900;font-size:1.4rem;color:#fff;margin-bottom:1rem;}
+.footer-brand span{color:#F5C842;}
+.footer-desc{font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.7;}
+.footer-col h4{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1rem;}
+.footer-col a{display:block;color:rgba(255,255,255,0.75);font-size:0.85rem;text-decoration:none;margin-bottom:0.5rem;font-weight:500;transition:color 0.2s;}
+.footer-col a:hover{color:#F5C842;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.4);}
+.socials{display:flex;gap:0.8rem;}
+.social-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:#fff;text-decoration:none;transition:background 0.2s;}
+.social-btn:hover{background:var(--blue);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Novu<span>Estates</span></div>
+  <ul class="nav-links">
+    <li><a href="#listings">Listings</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ South Africa's Premier Real Estate</div>
+    <h1>Find Where<span class="accent">Life Begins.</span></h1>
+    <p>Discover exceptional homes and apartments curated for the way you live — from vibrant city apartments to serene suburban retreats.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search by city, suburb or property name…"/>
+      <select>
+        <option>Any Type</option>
+        <option>House</option>
+        <option>Apartment</option>
+        <option>Townhouse</option>
+      </select>
+      <button>Search →</button>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">Properties Listed</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">1,800+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section class="section" id="listings">
+  <div class="listings-grid">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-tag">✦ Featured Properties</div>
+        <h2 class="section-title">Handpicked Homes<br>Just for <span class="brown">You</span></h2>
+        <p class="section-sub">Explore our curated selection of top residential properties across South Africa's most sought-after neighbourhoods.</p>
+      </div>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <div class="card-img-inner" style="background:linear-gradient(135deg,#1B4FD8,#0d1b4b)">🏡</div>
+          <div class="card-badge">For Sale</div>
+          <div class="card-fav">♡</div>
+        </div>
+        <div class="card-body">
+          <div class="card-price">R 4,200,000</div>
+          <div class="card-name">Serene Villa Sandton</div>
+          <div class="card-loc">📍 Sandton, Johannesburg</div>
+          <div class="card-meta">
+            <div class="meta-item"><span class="meta-icon">🛏</span> 4 Beds</div>
+            <div class="meta-item"><span class="meta-icon">🛁</span> 3 Baths</div>
+            <div class="meta-item"><span class="meta-icon">📐</span> 320 m²</div>
+          </div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <div class="card-img-inner" style="background:linear-gradient(135deg,#7B4F2E,#4A2D15)">🏘</div>
+          <div class="card-badge" style="background:var(--brown)">To Rent</div>
+          <div class="card-fav">♡</div>
+        </div>
+        <div class="card-body">
+          <div class="card-price">R 28,000 / mo</div>
+          <div class="card-name">Modern Waterfall Apartment</div>
+          <div class="card-loc">📍 Waterfall, Midrand</div>
+          <div class="card-meta">
+            <div class="meta-item"><span class="meta-icon">🛏</span> 2 Beds</div>
+            <div class="meta-item"><span class="meta-icon">🛁</span> 2 Baths</div>
+            <div class="meta-item"><span class="meta-icon">📐</span> 145 m²</div>
+          </div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <div class="card-img-inner" style="background:linear-gradient(135deg,#0F2F8A,#1B4FD8)">🏠</div>
+          <div class="card-badge">For Sale</div>
+          <div class="card-fav">♡</div>
+        </div>
+        <div class="card-body">
+          <div class="card-price">R 7,500,000</div>
+          <div class="card-name">Clifton Boulevard Retreat</div>
+          <div class="card-loc">📍 Clifton, Cape Town</div>
+          <div class="card-meta">
+            <div class="meta-item"><span class="meta-icon">🛏</span> 5 Beds</div>
+            <div class="meta-item"><span class="meta-icon">🛁</span> 4 Baths</div>
+            <div class="meta-item"><span class="meta-icon">📐</span> 480 m²</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section alt" id="how">
+  <div class="hiw-inner">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-tag">✦ Simple Process</div>
+        <h2 class="section-title">Your Journey to a<br><span class="brown">New Home</span></h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Search & Discover</h3>
+        <p>Browse thousands of verified listings filtered by location, price, and lifestyle preferences.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Book a Viewing</h3>
+        <p>Schedule in-person or virtual tours with our expert agents at a time that works for you.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Move In</h3>
+        <p>We handle the paperwork, negotiations, and transfer — you just collect your keys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-tag">✦ Client Stories</div>
+        <h2 class="section-title">What Our<br><span class="brown">Clients Say</span></h2>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Novu Estates made our home search effortless. Within three weeks we'd found our dream family home in Sandton — above and beyond expectations."</p>
+        <div class="testi-author">
+          <div class="avatar av1">NM</div>
+          <div>
+            <div class="author-name" style="color:#fff;">Nomsa Mthembu</div>
+            <div class="author-role">Homeowner, Sandton</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Professional, transparent, and genuinely caring. They negotiated a price well below asking and guided us through every step of transfer."</p>
+        <div class="testi-author">
+          <div class="avatar av2">TN</div>
+          <div>
+            <div class="author-name">Thabo Nkosi</div>
+            <div class="author-role">Property Investor, JHB</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"I was relocating from Cape Town and had no time. The team arranged everything remotely — virtual tours, paperwork, everything. Phenomenal service."</p>
+        <div class="testi-author">
+          <div class="avatar av3">LP</div>
+          <div>
+            <div class="author-name">Lerato Pule</div>
+            <div class="author-role">First-Time Buyer, Pretoria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section alt" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-tag">✦ Get In Touch</div>
+      <div class="big">Let's Find Your<br><span style="color:var(--blue)">Perfect</span><br>Home.</div>
+      <p>Our agents are ready to guide you from your first enquiry all the way to moving day. Reach out today.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ci-dot"></div> hello@novuestates.co.za</div>
+        <div class="ci"><div class="ci-dot"></div> +27 11 234 5678</div>
+        <div class="ci"><div class="ci-dot"></div> 5 Rivonia Blvd, Sandton, 2196</div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Thabo"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Nkosi"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="thabo@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>I'm looking to…</label>
+        <select>
+          <option>Buy a property</option>
+          <option>Rent a property</option>
+          <option>Sell my property</option>
+          <option>Get an investment valuation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your ideal home — location, size, budget…"></textarea>
+      </div>
+      <button class="submit-btn">Send Enquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Novu<span>Estates</span></div>
+        <p class="footer-desc">South Africa's trusted residential real estate partner — connecting people with places they love since 2009.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">Featured Listings</a>
+        <a href="#">New Developments</a>
+        <a href="#">Rental Properties</a>
+        <a href="#">Property Valuation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Agents</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">POPIA Notice</a>
+        <a href="#">FIC Act</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 NovuEstates (Pty) Ltd. All rights reserved.</div>
+      <div class="socials">
+        <a class="social-btn" href="#">f</a>
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="#">𝕏</a>
+        <a class="social-btn" href="#">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});
+reveals.forEach(el=>io.observe(el));
+
+document.querySelectorAll('.card-fav').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    btn.textContent=btn.textContent==='♡'?'♥':'♡';
+    btn.style.color=btn.textContent==='♥'?'#e24b4a':'';
+  });
+});
+</script>
+</body>
+</html>
