@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.25rm;
+    line-height: 1.25;
+    background-color: black;
+}
+
+p {
+    margin-block: 25px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.primary-navigation ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-navigation a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a:focus-visible {
+    color: white;
+}
+
+
+h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    line-height: 1.1;
+
+    @media (width > 720px) {
+       font-size: 7.5rem; 
+    }
+}
+
+a {
+    color: #1b281b;
+}
+
+
+h2 {
+    color: white;
+    text-align: start;
+}
+
+h3{
+    font-size: 1.75rem;
+}
+
+a {
+    color: red;
+}
+
+a:visited {
+    color: green
+}
+
+a:hover 
+a:focus-visible {
+    color: purple
+}
+
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+ul,
+ol {
+    color: red;
+}
+
+li {
+    margin-block: 5px;
+    color: white;
+}
+
+ul li::marker {
+    content: '';
+}
+
+a:active {
+    color: white;
+}
+
+section {
+    margin-block: 100px;
+}
+
+.container {
+    max-inline-size: 1000px;
+    margin-inline: auto;
+}
+
+    .two-column-layout {
+        display: grid;
+        gap: 60px;
+        margin-block-end: 60px;
+            
+        @media (width > 720px) { 
+           grid-template-columns: 1fr 1fr;
+        }
+    }
+
+.teal-text {
+    color: #0b4a5a;
+}
+
+.teal-bg {
+    padding: 10px;
+    color: white;
+    border: #0b4a5a solid 5px;
+    background-color: #087a98;
+}
+
+.teal-bg strong {
+    color: yellow
+}
+
+.climber-bg {
+    color: white;
+    background-image: url("../images/simple-steps.jpg");
+    padding: 24px;
+    border: #0b4a5a solid 10px;
+    
+    background-repeat: no-repeat ;
+    background-position: center ;
+    background-size: cover;
+}
+
+footer {
+     text-align: center;
+    }
