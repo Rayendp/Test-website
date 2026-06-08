@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-bg: #111111;
+    --secondary-bg: #1A1A1A;
+    --accent: #00D26A;
+    --accent-hover: #00B85C;
+    --text-main: #111111;
+    --text-secondary: #ffffff;
+    --border-color: #2D2D2D;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,15 +22,18 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
+    background: var(--secondary-bg);
+    color: var(--text-secondary);
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #fff;
+    background: var(--primary-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
+    color: var(--text-secondary)
 }
 
 nav {
@@ -29,21 +42,48 @@ nav {
     align-items: center;
     gap: 40px;
     padding: 20px;
+    background: rgba(17, 17, 17, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-secondary);
     font-weight: 600;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #0077FF;
+    color: var(--accent);
 }
 
 section {
     padding: 100px 10%;
+    background: var(--primary-bg);
+    color: var(--text-secondary);
+}
+
+.alt-section {
+    background: var(--secondary-bg);
+    color: var(--text-secondary);
+}
+
+p {
+    color: var(--text-main);
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
 }
 
 h1,h2,h3 {
@@ -54,6 +94,11 @@ h2 {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 50px;
+    color: var(--text-main);
+}
+
+h3 {
+    color: var(--text-secondary);
 }
 
 #home {
@@ -63,27 +108,31 @@ h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #f5f7fa;
+    background: var(--primary-bg);
+    color: var(--text-main);
 }
 
 #home h1 {
     font-size: 4rem;
     max-width: 900px;
+    color: var(--text-secondary);
 }
 
 #home p {
     font-size: 1.2rem;
     margin: 20px 0;
+    color: var(--text-secondary);
 }
 
 #home a{
     display: inline-block;
     padding: 15px 35px;
-    background: #0077FF;
+    background: var(--accent);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     transition: 0.3s;
+    color: var(--text-secondary);
 }
 
 #home a:hover {
@@ -92,6 +141,7 @@ h2 {
 
 #how-it-works {
     background: #fff;
+    color: var(--text-secondary)
 }
 
 .step {
@@ -100,6 +150,11 @@ h2 {
     border-radius: 15px;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--text-secondary);
+}
+
+.steps p {
+    color: var(--text-secondary);
 }
 
 #features {
@@ -107,16 +162,25 @@ h2 {
 }
 
 .feature {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
+    background: var(--secondary-bg);
+    padding: 24px;
+    border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
+    border: 1px solid var(--border-color);
 }
 
 .feature:hover {
     transform: translateY(-5px);
+}
+
+#builders h2 {
+    color: var(--text-secondary);
+}
+
+#builders p {
+    color: var(--text-secondary)
 }
 
 #builders a {
@@ -127,10 +191,12 @@ h2 {
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
+    color: var(--text-main)
 }
 
 #reviews {
     background: #f5f7fa;
+    color: var(--text-main);
 }
 
 .review {
@@ -139,17 +205,18 @@ h2 {
     border-radius: 15px;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    color: var(--text-main);
 }
 
 footer {
     background: #111;
-    color: #fff;
+    color: var(--text-secondary);
     text-align: center;
     padding: 40px 20%;
 }
 
 footer a {
-    color:white;
+    color: var(--text-secondary);
     text-decoration: none;
     margin: 0 10px;
 }
