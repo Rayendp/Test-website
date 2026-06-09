@@ -121,18 +121,6 @@ nav a:hover {
     }
 }
 
-nav {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-    background: rgba(17, 17, 17, 0.95);
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-secondary);
-}
-
 nav a {
     text-decoration: none;
     color: var(--text-secondary);
@@ -469,7 +457,7 @@ footer p {
     height: auto;
     display: block;
     border-radius: 20px;
-    margin-: 0 auto;
+    margin: 0 auto;
     object-fit: cover;
 }
 
