@@ -24,19 +24,78 @@ body {
     color: #333;
     background: var(--secondary-bg);
     color: var(--text-secondary);
+    padding-top: 70px;
 }
 
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: var(--primary-bg);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
+    color: var(--text-secondary);
+    top: 0;
+    justify-content: space-between;
+    display: flex;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.logo-section h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
     color: var(--text-secondary)
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .logo-section h3 {
+        font-size: 18px;
+    }
+
+    .download-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
 nav {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,8 +183,8 @@ h3 {
     color: var(--text-secondary);
 }
 
-#home a{
-    display: inline-block;
+#home a {
+     display: inline-block;
     padding: 15px 35px;
     background: var(--accent);
     color: #fff;
@@ -141,24 +200,41 @@ h3 {
 
 #how-it-works {
     background: #fff;
-    color: var(--text-secondary)
+    color: var(--text-main)
 }
 
-.step {
+#how-it-works h2 {
+    color: var(--text-main)
+}
+
+#how-it-works p {
+    color: var(--text-main);
+}
+
+.steps {
     background: #f8f8f8fa;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 20px;
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--text-main);
+}
+
+.steps h3 {
+    color: var(--text-main);
 }
 
 .steps p {
-    color: var(--text-secondary);
+    color: var(--text-main);
 }
 
 #features {
-    background: #f5f7fa;
+    background: var(--secondary-bg);
+    color: var(--text-secondary);
+}
+
+#features h2, p {
+    color: var(--text-secondary)
 }
 
 .feature {
@@ -175,12 +251,16 @@ h3 {
     transform: translateY(-5px);
 }
 
+#builders {
+    background-color: whitesmoke;
+}
+
 #builders h2 {
-    color: var(--text-secondary);
+    color: var(--text-main);
 }
 
 #builders p {
-    color: var(--text-secondary)
+    color: var(--text-main)
 }
 
 #builders a {
@@ -199,32 +279,149 @@ h3 {
     color: var(--text-main);
 }
 
-.review {
+#reviews h3 {
+    color: var(--text-main);
+}
+
+#reviews p {
+    color: var(--text-main);
+}
+
+.reviews {
     background: #fff;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    color: var(--text-main);
+    color: var(--text-main);   
 }
 
-footer {
+#reviews a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: #0077FF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    color: var(--text-main)
+}
+
+#review {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: #0077FF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    color: var(--text-main)
+}
+
+#review p {
+    color: var(--text-main)
+}
+
+#cta p {
+    color: var(--text-secondary);
+}
+
+#cta img {
+    width: 180px;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    .cta img {
+        width: 90px;
+    }
+}
+
+.footer {
     background: #111;
     color: var(--text-secondary);
     text-align: center;
-    padding: 40px 20%;
+    padding: 50px 20px;
 }
 
-footer a {
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer-brand h3{
+    margin: 0;
+    font-size: 24px;
+}
+
+.footer-tagline {
+    text-align: left;
+    max-width: 1200px;
+    margin: 10px auto 30px;
     color: var(--text-secondary);
-    text-decoration: none;
-    margin: 0 10px;
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.footer-nav a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #00B85C;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-icons img {
+    width: 35px;
+    height: 35px;
+    transition: 0.3s;
+}
+
+.footer-icons img:hover{
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-secondary)
+}
+
+{
 @media(max-width: 768px) {
     nav {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 15px; 
+        }
     }
 
     section {
@@ -317,3 +514,4 @@ footer a {
 img {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
+
