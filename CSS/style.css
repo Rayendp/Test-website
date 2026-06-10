@@ -46,12 +46,13 @@ header {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background: var(--secondary-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 0 25px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index: 1000;
 }
@@ -214,6 +215,7 @@ h3 {
 }
 
 .steps {
+    align-items: flex-start;
     background: #f8f8f8fa;
     padding: 30px;
     border-radius: 15px;
@@ -222,11 +224,50 @@ h3 {
     color: var(--text-main);
 }
 
+body {
+    counter-reset: section;
+}
+
+.step-heading {
+    counter-increment: section;
+    position: relative;
+    padding-left: 50px;
+    margin: 20px 0;
+}
+
+.step-heading::before {
+    content: counter(section);
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    background: black;
+    color: white;
+}
+
 .steps h3 {
+    align-items: center;
+    text-align: left;
     color: var(--text-main);
 }
 
 .steps p {
+    align-items: center;
+    text-align: left;
     color: var(--text-main);
 }
 
@@ -247,6 +288,15 @@ h3 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
     border: 1px solid var(--border-color);
+}
+
+.feature-card-1 {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0;
+    align-items: center;
+    text-align: center;
 }
 
 .feature:hover {
@@ -279,23 +329,52 @@ h3 {
 #reviews {
     background: #f5f7fa;
     color: var(--text-main);
+    text-align: center;
+}
+
+.content-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.text {
+    max-width: 400px;
+}
+
+.arrow {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 #reviews h3 {
     color: var(--text-main);
+    text-align: center;
+    padding: 15px;
 }
 
 #reviews p {
+    text-align: center;
     color: var(--text-main);
+    padding: 0;
 }
 
 .reviews {
     background: #fff;
-    padding: 30px;
+    padding: 15px;
     border-radius: 15px;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     color: var(--text-main);   
+}
+
+.material-symbols-outlined {
+    padding: 15px;
 }
 
 #reviews a {
@@ -343,7 +422,8 @@ h3 {
     background: #111;
     color: var(--text-secondary);
     text-align: center;
-    padding: 50px 20px;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-brand {
@@ -376,9 +456,10 @@ h3 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 15px;
     margin-bottom: 30px;
     color: var(--text-secondary);
+    
 }
 
 .footer-nav a{
@@ -386,6 +467,8 @@ h3 {
     text-decoration: none;
     font-size: 15px;
     transition: 0.3s;
+    margin: 0;
+    padding: 0;
 }
 
 .footer-nav a:hover {
@@ -516,3 +599,23 @@ img {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
