@@ -82,12 +82,11 @@ header {
 .download-btn {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--accent);
-    color: #fff;
+    background: white;
+    color: var(--text-main);
     text-decoration: none;
     border-radius: 50px;
     transition: 0.3s;
-    color: var(--text-secondary)
 }
 
 @media (max-width: 768px) {
@@ -137,7 +136,7 @@ p {
 
 .btn {
     background: var(--accent);
-    color: white;
+    color: var(--text-main);
     padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
@@ -392,14 +391,29 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 35px;
-    background: #0077FF;
+    background: lightseagreen;
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     color: var(--text-main)
 }
 
+#review a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: black;
+    text-decoration: none;
+    border-radius: 50px;
+    color: var(--text-secondary)
+}
+
+#review h2 {
+    text-align: left;
+}
+
 #review p {
+    text-align: left;
     color: var(--text-main)
 }
 
