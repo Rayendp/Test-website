@@ -91,8 +91,7 @@ header {
 @media (max-width: 768px) {
     .navbar {
         flex-wrap: wrap;
-        text-align: center;
-        padding: 10px 20px;
+        text-align: center;       
     }
 
     .logo {
@@ -123,7 +122,7 @@ nav a {
     transition: 0.3s;
     justify-content: space-between;
     align-items: center;
-    gap: 15px
+    gap: 10px
 }
 
 nav a:hover {
@@ -143,7 +142,7 @@ nav a::after {
 }
 
 section {
-    padding: 100px 10%;
+    padding: 20px;
     background: var(--primary-bg);
     color: var(--text-secondary);
 }
@@ -171,13 +170,13 @@ p {
 }
 
 h1,h2,h3 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2 {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: var(--text-main);
 }
 
@@ -246,7 +245,7 @@ h3 {
 #how-it-works h2 {
     color: var(--text-main);
     padding: 0;
-    gap: 0;
+    gap: 10px;
 }
 
 #how-it-works p {
@@ -344,7 +343,7 @@ body {
     margin: 20px 0;
     align-items: center;
     text-align: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .feature:hover {
@@ -365,7 +364,7 @@ body {
 
 #builders a {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px 25px;
     background: #0077FF;
     color: #fff;
@@ -385,7 +384,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     text-align: center;
     margin: 25px 0;
 }
@@ -428,7 +427,7 @@ body {
 
 #reviews a {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px 35px;
     background: #0077FF;
     color: #fff;
@@ -440,17 +439,20 @@ body {
 #review {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 20px;
+    margin: 0;
+    padding: 15px 35px;
     background: lightseagreen;
     color: #fff;
     text-decoration: none;
-    border-radius: 50px;
-    color: var(--text-main)
+    border-radius: 25px;
+    color: var(--text-main);
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 #review a {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px 35px;
     background: black;
     text-decoration: none;
@@ -476,9 +478,30 @@ body {
     height: auto;
 }
 
-@media (max-width: 480px) {
-    .cta img {
-        width: 90px;
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+
+h1 {
+    font-size: 2,5rem;
+}
+
+p {
+    font: 1rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
     }
 }
 
@@ -486,35 +509,30 @@ body {
     background: #111;
     color: var(--text-secondary);
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     margin: 0;
+    justify-content: left;
 }
 
 .footer-brand {
    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 1000px;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    text-align: left;
-    font: 12px;
-    padding-left: 0;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 10px;
+   text-align: left;
 }
 
 .footer-logo {
     width: 50px;
     height: auto;
     margin-right: 10px;
+    justify-content: flex-start;
 }
 
 .footer-brand h3{
     margin: 0;
     font-size: 24px;
+    justify-content: flex-start;
 }
 
 .footer-tagline {
@@ -528,7 +546,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 30px;
     color: var(--text-secondary);
     
@@ -551,7 +569,7 @@ body {
 .footer-icons {
     display: flex;
     justify-content: left;
-    gap: 5px;
+    gap: 10px;
     margin-bottom: 15px;
     text-align: left;
 }
@@ -567,18 +585,21 @@ body {
 }
 
 .copyright {
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
+    justify-content: center;
 }
 
 footer p {
-    color: var(--text-secondary)
+    color: var(--text-secondary);
+    text-align: center;
+    justify-content: center;
 }
 
 @media(max-width: 768px) {
     nav {
         flex-wrap: wrap;
-        gap: 15px; 
+        gap: 10px; 
         }
     
 
@@ -644,7 +665,7 @@ footer p {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 10px;
 }
 
 .image-grid img {
