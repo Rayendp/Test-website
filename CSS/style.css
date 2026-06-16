@@ -66,6 +66,8 @@ header {
     display: flex;
     align-items: left;
     gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -76,6 +78,9 @@ header {
 .logo-section h3 {
     margin: 0;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .download-btn {
@@ -84,34 +89,8 @@ header {
     text-decoration: none;
     padding: 10px 18px;
     border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        text-align: center;       
-    }
-
-    .logo {
-        width: 40px;
-    }
-
-    .logo-section h3 {
-        font-size: 18px;
-    }
-
-    .download-btn {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    .nav a {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        row-gap: 10px;
-        margin-top: 10px;
-    }
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 nav a {
@@ -606,26 +585,6 @@ footer p {
     justify-content: center;
 }
 
-@media(max-width: 768px) {
-    nav {
-        flex-wrap: wrap;
-        gap: 10px; 
-        }
-    
-
-    section {
-        padding: 80px 5%;
-    }
-
-    #home h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-}
-
 .hero-image {
     width: 100%;
     max-width: 700px;
@@ -723,4 +682,50 @@ img {
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
+}
+
+@media(max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 10px; 
+        }
+    
+
+    section {
+        padding: 80px 5%;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        text-align: center;       
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .logo-section h3 {
+        font-size: 18px;
+    }
+
+    .download-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .nav a {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-top: 10px;
+    }
 }
