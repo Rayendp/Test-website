@@ -236,18 +236,23 @@ h3 {
 }
 
 #how-it-works p {
+    display: flex;
     color: var(--text-main);
     padding: 20px;
 }
 
 .steps {
-    align-items: flex-start;
+    display: flex;
     background: #f8f8f8fa;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
-    margin-bottom: 20px;
     text-align: center;
     color: var(--text-main);
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 body {
@@ -544,12 +549,15 @@ p {
 }
 
 .footer-nav {
-    display: flex;
-    justify-content: center;
+        display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     color: var(--text-secondary);
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
     
 }
 
