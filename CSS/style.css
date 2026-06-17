@@ -23,7 +23,6 @@ body {
     color: #333;
     background: var(--secondary-bg);
     color: var(--text-secondary);
-    padding-top: 80px;
 }
 
 header {
@@ -119,6 +118,7 @@ nav a::after {
 }
 
 section {
+    display: block;
     padding: 20px;
     background: var(--primary-bg);
     color: var(--text-secondary);
@@ -151,6 +151,7 @@ h1,h2,h3 {
 }
 
 h2 {
+    display: flex;
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -158,11 +159,13 @@ h2 {
 }
 
 h3 {
+    display: flex;
     color: var(--text-secondary);
+    flex-direction: column;
 }
 
 #home {
-    min-height: 100vh;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,6 +197,7 @@ h3 {
     transition: 0.3s;
     color: rgb(28, 202, 129);
     animation: bounce 2s ease infinite;
+    margin-top: 25px
 }
 
 @keyframes bounce {
@@ -220,9 +224,15 @@ h3 {
 }
 
 #how-it-works h2 {
+    display: flex;
     color: var(--text-main);
-    padding: 0;
+    padding: 20px;
     gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #how-it-works p {
@@ -244,6 +254,19 @@ body {
     counter-reset: section;
 }
 
+.number {
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
 .step-heading {
     counter-increment: section;
     position: relative;
@@ -251,37 +274,18 @@ body {
     margin: 20px 0;
 }
 
-.step-heading::before {
-    content: counter(section);
-
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 2px solid black;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-    font-size: 14px;
-
-    background: black;
-    color: white;
-}
-
 .steps h3 {
+    display: flex;
     align-items: center;
     text-align: left;
     color: var(--text-main);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
 }
 
-.steps p {
+.steps-p {
     align-items: center;
     text-align: left;
     color: var(--text-main);
@@ -309,6 +313,7 @@ body {
 }
 
 .features h3 {
+    display: flex;
     margin: 0;
 }
 
@@ -488,11 +493,13 @@ img {
 }
 
 h1 {
+    display: flex;
     font-size: 2,5rem;
 }
 
 p {
-    font: 1rem;
+    display: flex;
+    margin: 0;
 }
 
 .footer {
@@ -525,10 +532,15 @@ p {
 }
 
 .footer-tagline {
+     display: flex;
     text-align: left;
     max-width: 1200px;
     margin: 10px auto 30px;
     color: var(--text-secondary);
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-nav {
@@ -587,7 +599,6 @@ footer p {
 
 .hero-image {
     width: 100%;
-    max-width: 700px;
     height: auto;
     display: block;
     border-radius: 20px;
@@ -692,7 +703,7 @@ img {
     
 
     section {
-        padding: 80px 5%;
+        padding: 0;
     }
 
     #home h1 {
