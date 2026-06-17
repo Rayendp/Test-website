@@ -549,7 +549,7 @@ p {
 }
 
 .footer-nav {
-        display: flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 0;
@@ -557,8 +557,7 @@ p {
     flex-direction: row;
     align-content: center;
     justify-content: flex-start;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 .footer-nav a{
