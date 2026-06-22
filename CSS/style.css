@@ -349,7 +349,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .text-h2-1{
