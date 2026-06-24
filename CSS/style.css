@@ -742,7 +742,7 @@ img {
     'opsz' 24;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 768px) and (max-width: 1023px) {
     nav {
         flex-wrap: wrap;
         gap: 10px; 
@@ -798,4 +798,104 @@ nav {
     align-content: center;
     justify-content: flex-start;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+    
+    nav {
+        flex-wrap: wrap;
+        gap: 10px; 
+        }
+    
+
+    section {
+        padding: 0;
+    }
+
+    #home h1 {
+        display: flex;
+        font-size: 2.6rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 0;      
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .logo-section h3 {
+        font-size: 18px;
+    }
+
+    .download-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .nav a {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1440px) {
+
+   nav {
+        flex-wrap: wrap;
+        gap: 10px; 
+        }
+    
+
+    section {
+        padding: 0;
+    }
+
+    #home h1 {
+        display: flex;
+        font-size: 2.6rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 0;      
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .logo-section h3 {
+        font-size: 18px;
+    }
+
+    .download-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .nav a {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-top: 10px;
+    }
 }
