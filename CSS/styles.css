@@ -115,12 +115,21 @@ body {
     white-space: nowrap;
     transition: border-color 180ms ease, color 180ms ease;
 }
+
 a {
     color: inherit;
     text-decoration: none;
 }
-*, *::before, *::after {
+
+*,
+ *::before, 
+*::after {
     box-sizing: border-box;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
 }
 
 .nav-links {
@@ -362,6 +371,9 @@ h3 {
 
 body {
     counter-reset: section;
+    button, input, textarea, select {
+    font-family: var(--font-family);
+}
 }
 
 .number {
