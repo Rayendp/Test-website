@@ -41,14 +41,14 @@
  <main>
   <section id="home">
   <a href="#">Download app<span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
-    <h1>Order Rebar and ready-mix,Faster.Smarter.</h1>
-      <p>South Africa's construction procurment platform for ready-mix concrete and revar.Compare suppliers, save time, and secure the best price.</p>
+    <h1 class="home">Order Rebar and ready-mix,Faster.Smarter.</h1>
+      <p class="home">South Africa's construction procurment platform for ready-mix concrete and revar.Compare suppliers, save time, and secure the best price.</p>
       <img src="assets/clickbuild-app-example-hero-section.png" class="hero-image" alt="three phones showing different templates.">
     </section>
 
       <section id="how-it-works">
           <h2>How ClickBuild works</h2>
-          <p>Submit your project details once, compare supplier quotes, and manage your ready-mix or rebar order without the usual back-and-forth.</p>
+          <p class="how-it-works">Submit your project details once, compare supplier quotes, and manage your ready-mix or rebar order without the usual back-and-forth.</p>
           <img src="assets/create-your-job-with-background.png" class="app-image" alt="Illustration of the ClickBuild process">
           
       <div class="steps">
@@ -78,25 +78,37 @@
       </div>
     </section>
 
-    <section id="features">
-        <h2>Built for  construction procurement</h2>
-          <p>ClickBuild is designed around ready-mix and rebar workflows, helping teams submit accurate construction material procurement requests and keep every quote organised from start to finish.</p>
-        
-         <div class="feature-card-1">
-          <h3><span class="material-symbols-outlined" aria-hidden="true">water_drop</span>Ready-mix ordering</h3>
-          <p>Add pour type, volume, strength, delivery timing, truck access, boom pump needs, static pump needs, and site address in a clear request flow.</p>
-          </div>
+     <section class="features dark-section" id="features" aria-labelledby="features-title">
+            <div class="container">
+                <div class="features__header">
+                    <h2 class="section-title" id="features-title">Built for construction procurement</h2>
+                    <p class="section-copy">
+                        ClickBuild is purpose-built for ready-mix and rebar sourcing, helping South African construction teams quote faster, compare suppliers, and keep orders organised.
+                    </p>
+                </div>
 
-         <div class="feature-card-1">
-          <h3><span class="material-symbols-outlined" aria-hidden="true">precision_manufacturing</span>Rebar requirements</h3>
-          <p>Upload bending schedules as PDFs or images, or manually add rebar items by diameter, length, and quantity when you do not have a schedule ready.</p>
-          </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon feature-icon--primary material-symbols-outlined" aria-hidden="true">water_drop</span>
+                        <h3>Ready-mix ordering</h3>
+                        <p>Add pour type, volume, strength, delivery timing, access details, pump requirements, and site address in a simple request flow.</p>
+                    </article>
 
-         <div class="feature-card-1">
-          <h3><span class="material-symbols-outlined" aria-hidden="true">compare_arrows</span>Suppliers comparison</h3>
-          <p>Compare ready-mix concrete suppliers and rebar suppliers by pricing, availability, contact details, quote references, material lines, and comments in one organised place.</p>
-        </div> 
-      </section>
+                    <article class="feature-card">
+                        <span class="feature-icon feature-icon--secondary material-symbols-outlined" aria-hidden="true">precision_manufacturing</span>
+                        <h3>Rebar requirements</h3>
+                        <p>Upload bending schedules or manually add rebar items by diameter, length, and quantity when your project details are ready.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <span class="feature-icon feature-icon--primary material-symbols-outlined" aria-hidden="true">compare_arrows</span>
+                        <h3>Supplier comparison</h3>
+                        <p>Compare supplier quotes by price, availability, contact details, references, material lines, and comments in one place.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
 
      <section id="builders">
       <div class="text">
@@ -138,16 +150,39 @@
         </div>
       </section>
 
-      <section id="review">
-        <div class="rev">
-      <h2>Ready to order smarter?</h2>
-        <p>Use ClickBuild to create structured job requests, upload schedules, manage quote statuses, and compare supplier responses from one mobile-first construction platform.</p>
-        <a href="#">Download app</a>
-        </div>
-        <div class="img">
-        <img src="assets/download-app-with-turquoise-radial-background.png" class="hero-image" alt="A leaning phone showing where to download the app">
-        </div>
-      </section>
+      <section class="download-cta light-section" id="download" aria-labelledby="download-title">
+            <div class="container">
+                <div class="cta-panel">
+                    <div class="cta-content">
+                        <h2 class="cta-title" id="download-title">Ready to order smarter?</h2>
+                        <p>
+                            Use ClickBuild to compare suppliers, save time, upload project details, and manage ready-mix and rebar orders from one simple app.
+                        </p>
+    
+                        <a
+                            class="button button--dark"
+                            href="https://apps.apple.com/app/clickbuild/id6775819747"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Download ClickBuild on the Apple App Store"
+                        >
+                            Download App
+                        </a>
+                    </div>
+
+                    <figure class="cta-media" aria-label="ClickBuild mobile app preview">
+                        <img
+                            src="./assets/download-app-with-turquoise-radial-background.png"
+                            alt="ClickBuild mobile app screen for managing ready-mix and rebar quote requests."
+                            width="760"
+                            height="560"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </figure>
+                </div>
+            </div>
+        </section>
 
       <footer class="footer">
         <div class="footer-brand">
@@ -176,8 +211,9 @@
   <p><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></p>
  </div>
 
-   <p class="copyright">
-    <p>©2026 ClickBuild. All rights reserved.</p>
+   <div class="copyright">
+    <p class="copyright">©2026 ClickBuild. All rights reserved.</p>
+  </div>
  </footer>
   </body>
  </html>
