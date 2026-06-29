@@ -131,24 +131,50 @@
      </div>
     </section>
 
-    <section id="reviews">
-        <h2>Why Teams use Clickbuild</h2>
+    <section class="testimonials light-section" id="reviews" aria-labelledby="reviews-title">
+            <div class="container">
+                <h2 class="section-title" id="reviews-title">Why teams use ClickBuild</h2>
 
-        <div class="content-slider">
-        <div class="text">
-        <h3 id="title">For contractors</h3>
-        <p id="desc">Create ready-mix and rebar quote requests without repeating the same job details to every supplier.</p>
-        
-        <h3 id="title">For site teams</h3>
-        <p id="desc">Keep job requirements, uploaded schedules, supplier responses, and quote details organised in one mobile platform.</p>
-        
-        <h3 id="title">For procurement teams</h3>
-        <p id="desc">Compare supplier quotes using pricing, availability, line items, references, and delivery details before making a decision.</p>
-        
-         <span class="material-symbols-outlined" aria-hidden="true">west</span><span class="material-symbols-outlined" aria-hidden="true">east</span>
-         </div>
-        </div>
-      </section>
+                <div class="testimonial-card">
+                    <div class="testimonial-track">
+                        <figure class="testimonial testimonial--active">
+                            <figcaption>For contractors</figcaption>
+                            <blockquote>
+                                <p>Request ready-mix and rebar quotes without repeating the same job details to every supplier.</p>
+                            </blockquote>
+                        </figure>
+
+                        <figure class="testimonial" aria-hidden="true">
+                            <figcaption>For site teams</figcaption>
+                            <blockquote>
+                                <p>Keep project requirements, uploaded schedules, supplier responses, and order details organised in one platform.</p>
+                            </blockquote>
+                        </figure>
+
+                        <figure class="testimonial" aria-hidden="true">
+                            <figcaption>For procurement teams</figcaption>
+                            <blockquote>
+                                <p>Compare supplier pricing, availability, line items, references, and delivery details before making a buying decision.</p>
+                            </blockquote>
+                        </figure>
+                    </div>
+
+                    <button class="testimonial-button testimonial-button--previous" type="button">
+                        <span class="material-symbols-outlined" aria-hidden="true">west</span>
+                    </button>
+                    <button class="testimonial-button testimonial-button--next" type="button">
+                        <span class="material-symbols-outlined" aria-hidden="true">east</span>
+                    </button>
+
+                    <div class="testimonial-dots" aria-label="Benefit statement position">
+                        <button class="testimonial-dot testimonial-dot--active" type="button" aria-current="true"></button>
+                        <button class="testimonial-dot" type="button" aria-label="Show benefit statement 2"></button>
+                        <button class="testimonial-dot" type="button" aria-label="Show benefit statement 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
       <section class="download-cta light-section" id="download" aria-labelledby="download-title">
             <div class="container">
@@ -164,7 +190,6 @@
                             href="https://apps.apple.com/app/clickbuild/id6775819747"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Download ClickBuild on the Apple App Store"
                         >
                             Download App
                         </a>
@@ -204,12 +229,19 @@
  </nav>
 </main>
 
- <div class="footer-icons">
-  <p><span class="material-symbols-outlined" aria-hidden="true">social_leaderboard</span></p>
-  <p><span class="material-symbols-outlined" aria-hidden="true">crossword</span></p>
-  <p><span class="material-symbols-outlined" aria-hidden="true">group</span></p>
-  <p><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></p>
- </div>
+    <div class="footer-icons">
+     <ul class="social-links">
+      <li>   
+        <span class="material-symbols-outlined" aria-hidden="true">thumb_up</span>
+      </li> 
+      <li>
+        <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></p>
+     </li>
+      <li>
+        <span class="material-symbols-outlined" aria-hidden="true">business_center</span></p>
+     </li>
+    </ul>
+    </div>
 
    <div class="copyright">
     <p class="copyright">©2026 ClickBuild. All rights reserved.</p>
