@@ -340,7 +340,7 @@ h3 {
 #how-it-works p {
     display: flex;
     color: var(--text-main);
-    /* margin-bottom: 20px; */
+    margin-bottom: 20px;
     margin-left: 85px;
     margin-right: 25px;
 }
