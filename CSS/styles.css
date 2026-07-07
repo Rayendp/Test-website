@@ -288,6 +288,13 @@ h3 {
     color: var(--text-main);
     padding-top: 60px;
 }
+.app-chip {
+    margin-bottom: 1.8rem;
+    padding: 0.55rem 1.15rem;
+    background: rgba(92, 254, 248, 0.1);
+    color: var(--color-primary);
+    animation: bounce 2s ease infinite;
+}
 
 #home h1 {
     font-size: 4rem;
@@ -299,19 +306,6 @@ h3 {
     font-size: 1.2rem;
     margin: 20px 0;
     color: var(--text-secondary);
-}
-
-#home a {
-     display: inline-block;
-    padding: 5px 10px;
-    background: transparent;
-    color: lightseagreen;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s;
-    color: rgb(28, 202, 129);
-    animation: bounce 2s ease infinite;
-    margin-top: 25px
 }
 
 @keyframes bounce {
