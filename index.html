@@ -17,6 +17,7 @@
   <link href="CSS/styles.css" rel="stylesheet">
  </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header" id="top">
         <nav class="site-nav container" aria-label="Primary navigation">
@@ -41,26 +42,42 @@
         </nav>
   </header>
 
- <main>
-  <section id="home">
-    <div class="hero">
-    <div class="hero__inner container">
-  <a class="app-chip" href="#download"><span>Download App</span> <span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
-    <h1 class="home">Order Rebar and Ready-Mix.Faster. Smarter.</h1>
-      <p class="home">South Africa's construction procurment platform for ready-mix concrete and revar.Compare suppliers, save time, and secure the best price.</p>
-      <img src="assets/clickbuild-app-example-hero-section.png" class="hero-img" alt="three phones showing different templates.">
+  <main>
+    <section id="home">
+      <div class="hero">
+        <div class="hero__inner container">
+          <a class="app-chip" href="#download"><span>Download App</span> <span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
+          <h1 class="home">Order Rebar and Ready-Mix. Faster. Smarter.</h1>
+          <p class="home">South Africa's construction procurement platform for ready-mix concrete and rebar. Compare suppliers, save time, and secure the best price.</p>
+         <img src="assets/clickbuild-app-example-hero-section.png" class="hero-img" alt="three phones showing different templates.">
       </div>
      </div>
     </section>
 
-    <section id="how-it-works">
-        <div class="intro">
-        <h2>How ClickBuild works</h2>
-        <p class="paragraph">Submit your project details once, compare supplier quotes, and manage your ready-mix or rebar order without the usual back-and-forth.</p>
-        </div>
+    <section class="process light-section" id="how-it-works" aria-labelledby="process-title">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 class="section-title" id="process-title">How ClickBuild works</h2>
+                    <p class="section-copy">
+                        Submit your project details once, compare supplier quotes, and manage your ready-mix or rebar order without the usual back-and-forth.
+                    </p>
+                </div>
         
         <div class="process-grid">
-            <img src="assets/create-your-job-with-background.png" class="app-image" alt="Illustration of the ClickBuild process">
+                    <figure class="process-art process-images" aria-label="ClickBuild process screen previews">
+                        <img
+                            class="process-image process-image--source process-image--active"
+                            src="./assets/create-your-job-with-background.png"
+                            alt="ClickBuild app screen for creating a ready-mix or rebar job.">
+                        <img
+                            class="process-image process-image--source"
+                            src="./assets/upload-or-enter-with-background.png"
+                            alt="ClickBuild app screen for manually entering rebar requirements.">
+                        <img
+                            class="process-image process-image--source"
+                            src="./assets/compare-quotes-with-background.png"
+                            alt="ClickBuild supplier quote screen for comparing line items and totals.">
+                    </figure>
 
             <ol class="process-steps" aria-label="ClickBuild ordering process">
                 <li class="process-step">
